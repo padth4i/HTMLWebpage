@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+      function checkForm(form)
+  {
+    if(form.user.value == "")
+    {
+      alert("Error: Username cannot be blank!");
+      form.user.focus();
+      return false;
+    }
+      
+    if(form.email.value == "")
+    {
+      alert("Error: Email ID cannot be blank!");
+      form.email.focus();
+      return false;
+    }
+      
+    
+    if(form.pass.value == "")
+    {
+      alert("Error: Password cannot be blank!");
+      form.pass.focus();
+      return false;
+    }
+
+    if(form.user.value != "username") 
+    {
+     alert("Error: Wrong username was entered!");
+     form.user.focus();
+     return false;
+    }
+     
+    if(form.pass.value != "password") 
+    {
+     alert("Error: Wrong password was entered!");
+     form.pass.focus();
+     return false;
+    }
+    
+     window.open('redirect.html', '_blank')  
+     return true;    
+  }
+
+</script>
+<head>
+<style>
+
+h1
+    {
+        text-align: center;
+    }
+ 
+body
+    {
+        background: url("bgimg.jpg");
+        font-family: "Bebas Neue Light";
+        color: white;
+        text-align: center;
+        font-size: 25px
+    }
+    
+input[type=text] 
+    {
+        width: 25%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+input[type=password]
+    {
+	    width: 25%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;   
+    }
+input[type=submit]
+    {
+        background-color: dimgrey;
+        color: white;
+        font-family: "Bebas Neue Thin";
+        font-size: 20px;
+        letter-spacing: 2px;
+        border: none;
+        padding: 16px 32px;
+        cursor: pointer;
+    }
+</style>
+<title> Validation Form </title>
+</head>
+
+<body>
+<h1> Validation Form </h1>
+
+<form onsubmit="return checkForm(this);">
+    
+Email id<br>
+<input type="text" name="email"><br><br>
+
+Username<br>
+<input type="text" name="user"><br><br>
+
+Password<br>
+<input type="password" name="pass"><br><br>
+
+<input type="submit" name="submit" value="Submit">
+    
+</form>
+
+</body>
+</html>
